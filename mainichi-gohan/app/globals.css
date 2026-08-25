@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* 高齢者向けカラーパレット */
+:root {
+  --background: #fefdfb;
+  --foreground: #1a1a1a;
+  --primary: #ff8c42;
+  --primary-dark: #e67a33;
+  --secondary: #4a5568;
+  --success: #48bb78;
+  --warm-bg: #fff8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* 高齢者向けアクセシビリティ強化 */
+* {
+  -webkit-tap-highlight-color: rgba(255, 140, 66, 0.3);
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* フォーカス表示を明確に */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* テキスト選択の色 */
+::selection {
+  background-color: rgba(255, 140, 66, 0.3);
+  color: var(--foreground);
+}
