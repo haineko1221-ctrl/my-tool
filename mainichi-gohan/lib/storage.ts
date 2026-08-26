@@ -57,6 +57,22 @@ export function getMealRecords(limit: number = 10): MealRecord[] {
 }
 
 /**
+ * IDから特定の食事記録を取得
+ */
+export function getMealRecordById(id: string): MealRecord | null {
+  try {
+    const stored = localStorage.getItem(KEYS.MEALS);
+    if (!stored) return null;
+
+    const meals: MealRecord[] = JSON.parse(stored);
+    return meals.find((meal) => meal.id === id) || null;
+  } catch (error) {
+    console.error('食事記録の読み込みエラー:', error);
+    return null;
+  }
+}
+
+/**
  * 連続記録を更新
  */
 export function updateStreak(): StreakData {
