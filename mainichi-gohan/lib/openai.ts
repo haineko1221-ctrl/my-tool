@@ -48,6 +48,20 @@ export async function analyzeMealImage(imageDataUrl: string): Promise<Analysis> 
 4. 温かく前向きな「今日のひとこと」を生成
 5. 今日の食事を踏まえた「明日の提案」を3つ
 
+明日の提案について:
+- 毎回違う切り口で提案すること
+- バリエーション例：
+  * 調理法の提案（蒸す、焼く、煮る、炒めるなど）
+  * 新しい食材の提案（旬の野菜、魚、豆類など）
+  * 色どりや見た目の工夫
+  * 簡単な一品追加（漬物、ナッツ、フルーツなど）
+  * 温度の変化（温かいスープ、冷たいデザートなど）
+  * 食感のアクセント（カリカリ、とろとろなど）
+  * 季節感のある食材
+  * 発酵食品や保存食
+- 「スープを追加」「果物をデザートに」などの定番だけでなく、具体的で実践的な提案を心がける
+- 今日食べたものと組み合わせが良い食材を提案する
+
 注意:
 - 写真からは正確な量は分からないので、推定として表現する
 - 画像が不鮮明でも、見える範囲で優しくコメントする
@@ -79,7 +93,7 @@ export async function analyzeMealImage(imageDataUrl: string): Promise<Analysis> 
       ],
       response_format: { type: 'json_object' },
       max_tokens: 1000,
-      temperature: 0.7,
+      temperature: 0.9,
     });
 
     // レスポンスをパース
